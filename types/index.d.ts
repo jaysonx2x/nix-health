@@ -2,11 +2,11 @@
 
 // ====== USER PARAMS
 declare type CreateUserParams = {
-    agencyId?: {
-        _id: string;
-        agencyCode: string;
-        agencyName: string;
-    };
+    // agencyId?: {
+    //     _id: string;
+    //     agencyCode: string;
+    //     agencyName: string;
+    // };
     clerkId: string;
     email: string;
     username: string;
