@@ -25,15 +25,24 @@ const variants = {
   visible: { opacity: 1 },
 };
 
-export interface AgencyProp {
-  id: string;
+interface AgencyProps {
+  _id: any,
   agencyCode: string;
   agencyName: string;
   logo: string;
+  contactInfos: {
+    address1: string;
+    city: string;
+    state: string;
+    zip: string;
+    phoneNo1: string;
+    phoneNo2?: string; // Optional field
+    email: string;
+  };
 }
 
 interface Prop {
-  agency: AgencyProp;
+  agency: AgencyProps;
   index: number;
   refreshList: () => void;
 }

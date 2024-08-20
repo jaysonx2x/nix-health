@@ -13,13 +13,27 @@ import {
 } from "@/components/ui/alert-dialog";
 import { deleteAgency } from "@/lib/actions/agency.action";
 import { useToast } from "../ui/use-toast";
-import { Loader } from "lucide-react";
-import { Agency } from "@/lib/db/models/agency.model";
+
+interface AgencyProps {
+  _id: any,
+  agencyCode: string;
+  agencyName: string;
+  logo: string;
+  contactInfos: {
+    address1: string;
+    city: string;
+    state: string;
+    zip: string;
+    phoneNo1: string;
+    phoneNo2?: string; // Optional field
+    email: string;
+  };
+}
 
 interface ConfirmProps {
   confirmDelete: boolean;
   setConfirmDelete?: Dispatch<SetStateAction<boolean>>;
-  agency?: Agency;
+  agency?: AgencyProps;
   refreshList: () => void;
 }
 

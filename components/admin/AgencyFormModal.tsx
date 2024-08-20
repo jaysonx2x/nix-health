@@ -10,10 +10,7 @@ import { useRouter } from "next/navigation";
 import { createAgency, updateAgency } from "@/lib/actions/agency.action";
 import CustomFormField, { FormFieldType } from "../shared/CustomFormField";
 import SubmitButton from "../shared/SubmitButton";
-import {
-  DialogDescription,
-  DialogTitle,
-} from "@radix-ui/react-dialog";
+import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 import { Agency } from "@/lib/db/models/agency.model";
 import { useToast } from "../ui/use-toast";
 
@@ -29,20 +26,35 @@ const formSchema = z.object({
   email: z.string().optional(),
 });
 
+interface AgencyProps {
+  _id: any,
+  agencyCode: string;
+  agencyName: string;
+  logo: string;
+  contactInfos: {
+    address1: string;
+    city: string;
+    state: string;
+    zip: string;
+    phoneNo1: string;
+    phoneNo2?: string; // Optional field
+    email: string;
+  };
+}
+
 const AgencyFormModal = ({
   openModal,
   setOpenModal,
   type,
   agency,
-  refreshList
-} : {
+  refreshList,
+}: {
   openModal: boolean;
   setOpenModal?: Dispatch<SetStateAction<boolean>>;
   type: "add" | "edit";
-  agency?: Agency;
+  agency?: AgencyProps;
   refreshList: () => void;
 }) => {
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
@@ -69,7 +81,6 @@ const AgencyFormModal = ({
     setIsSubmitting(true);
 
     try {
-
       const theAgency = {
         agencyCode: data.agencyCode,
         agencyName: data.agencyName,
@@ -91,9 +102,7 @@ const AgencyFormModal = ({
         if (newAgency) {
           toast({ title: "Agency created!" });
         }
-
       } else {
-
         // Update Agency
         const updatedAgency = await updateAgency(agency?._id, theAgency);
         if (updatedAgency) {
@@ -105,7 +114,6 @@ const AgencyFormModal = ({
       setIsSubmitting(false);
       setOpenModal && setOpenModal(false);
       refreshList();
-      
     } catch (error) {
       console.log(error);
       toast({
