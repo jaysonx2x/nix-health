@@ -23,6 +23,41 @@ declare type CreateUserParams = {
     photo: string;
   };
   
+
+
+  // ====== AGENCY PARAMS
+declare type CreateAgencyParams = {
+  agencyCode: string;
+  agencyName: string;
+  logo?: string;
+  contactInfos?: {
+    address1: string;
+    city: string;
+    state: string;
+    zip: string;
+    phoneNo1: string;
+    phoneNo2: string;
+    email: string;
+  }
+};
+
+declare type UpdateAgencyParams = {
+  agencyCode: string;
+  agencyName: string;
+  contactInfos?: {
+    address1: string;
+    city: string;
+    state: string;
+    zip: string;
+    phoneNo1: string;
+    phoneNo2: string;
+    email: string;
+  }
+};
+
+
+
+
   
   // ====== URL QUERY PARAMS
   declare type FormUrlQueryParams = {

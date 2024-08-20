@@ -1,28 +1,23 @@
 export const navLinks = [
     {
-      label: "Home",
+      label: "Dashboard",
       route: "/",
       icon: "/assets/icons/home.svg",
     },
     {
-      label: "Patients",
-      route: "/patients/add",
+      label: "My Patients",
+      route: "/patients",
       icon: "/assets/icons/image.svg",
     },
     {
       label: "Referrals",
-      route: "/transformations/add/fill",
+      route: "/referrals",
       icon: "/assets/icons/stars.svg",
     },
     {
       label: "Reports",
-      route: "/transformations/add/remove",
+      route: "/reports",
       icon: "/assets/icons/scan.svg",
-    },
-    {
-      label: "Settings",
-      route: "/transformations/add/recolor",
-      icon: "/assets/icons/filter.svg",
     },
     {
       label: "Profile",
@@ -30,9 +25,22 @@ export const navLinks = [
       icon: "/assets/icons/profile.svg",
     },
     {
-      label: "Buy Credits",
-      route: "/credits",
-      icon: "/assets/icons/bag.svg",
+      label: "Settings",
+      route: "/settings",
+      icon: "/assets/icons/filter.svg",
+    },
+  ];
+
+export const navRightLinks = [
+    {
+      label: "Agencies",
+      route: "/",
+      icon: "/assets/icons/home.svg",
+    },
+    {
+      label: "Settings",
+      route: "/settings",
+      icon: "/assets/icons/filter.svg",
     },
   ];
   
