@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { PlusIcon } from "lucide-react";
-import AgencyCard, { AgencyProp } from "@/components/admin/AgencyCard";
+import AgencyCard, { AgencyProps } from "@/components/admin/AgencyCard";
 import { useEffect, useState } from "react";
 import { getAgencies } from "@/lib/actions/agency.action";
 import EmptyCard from "@/components/shared/EmptyCard";
@@ -54,7 +54,7 @@ const Agencies = () => {
 
             {data.length > 0 && (
               <div className="grid gap-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mt-4">
-                {data.map((agency: AgencyProp, index: number) => (
+                {data.map((agency: AgencyProps, index: number) => (
                   <AgencyCard
                     key={agency.agencyCode}
                     agency={agency}

@@ -25,7 +25,7 @@ const variants = {
   visible: { opacity: 1 },
 };
 
-interface AgencyProps {
+export interface AgencyProps {
   _id: any,
   agencyCode: string;
   agencyName: string;
