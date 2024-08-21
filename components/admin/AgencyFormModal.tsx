@@ -13,6 +13,7 @@ import SubmitButton from "../shared/SubmitButton";
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 import { Agency } from "@/lib/db/models/agency.model";
 import { useToast } from "../ui/use-toast";
+import { AgencyProps } from "./AgencyCard";
 
 const formSchema = z.object({
   agencyCode: z.string().min(2, { message: "At least 2 characters" }),
@@ -26,21 +27,6 @@ const formSchema = z.object({
   email: z.string().optional(),
 });
 
-interface AgencyProps {
-  _id: any,
-  agencyCode: string;
-  agencyName: string;
-  logo: string;
-  contactInfos: {
-    address1: string;
-    city: string;
-    state: string;
-    zip: string;
-    phoneNo1: string;
-    phoneNo2?: string; // Optional field
-    email: string;
-  };
-}
 
 const AgencyFormModal = ({
   openModal,

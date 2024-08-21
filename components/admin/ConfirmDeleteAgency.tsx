@@ -13,22 +13,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import { deleteAgency } from "@/lib/actions/agency.action";
 import { useToast } from "../ui/use-toast";
+import { AgencyProps } from "./AgencyCard";
 
-interface AgencyProps {
-  _id: any,
-  agencyCode: string;
-  agencyName: string;
-  logo: string;
-  contactInfos: {
-    address1: string;
-    city: string;
-    state: string;
-    zip: string;
-    phoneNo1: string;
-    phoneNo2?: string; // Optional field
-    email: string;
-  };
-}
 
 interface ConfirmProps {
   confirmDelete: boolean;
